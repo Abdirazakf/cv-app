@@ -1,3 +1,52 @@
+:root {
+    --heading-color: #2b2b2c;
+}
+
 html, body {
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+header {
+    overflow: hidden;
+    padding: 20px 10px;
+    color: var(--heading-color);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+}
+
+header > h1 {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    line-height: 25px;
+    margin: 0;
+}
+
+.header-right {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header > h1 {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+        width: 100%;
+    }
+
+    #header {
+        width: 100%;
+    }
 }
