@@ -1,11 +1,11 @@
 import '../styles/SubmitButton.css'
 
-export default function SubmitButton({section}) {
+export default function SubmitButton({text, section}) {
     const classes = `submit-button ${section}-button`
-    console.log(section)
+
     return(
         <button type='submit' className={classes}>
-            Submit
+            {text}
         </button>
     )
 }
