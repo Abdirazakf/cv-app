@@ -50,18 +50,6 @@ h2 {
     color: var(--heading-color);
 }
 
-.cv-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 2fr 1fr;
-}
-
-.top-cv {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-}
-
 @media screen and (max-width: 500px) {
     header {
         display: flex;

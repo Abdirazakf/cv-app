@@ -21,7 +21,8 @@ export default function GeneralInfo({data, updateField}) {
                         <br/>
                         <input 
                             type="text"
-                            name='fullName' 
+                            name='fullName'
+                            id='fullName' 
                             placeholder='John Doe'
                             value={data.fullName}
                             onChange={handleChange}
@@ -37,6 +38,7 @@ export default function GeneralInfo({data, updateField}) {
                         <input 
                             type="email" 
                             name="email"
+                            id='email'
                             value={data.email}
                             placeholder='johndoe@example.com'
                             onChange={handleChange}
@@ -52,6 +54,7 @@ export default function GeneralInfo({data, updateField}) {
                         <input 
                             type="tel" 
                             name="phoneNumber"
+                            id='phoneNumber'
                             value={data.phoneNumber}
                             placeholder='xxx-xxx-xxxx'
                             onChange={handleChange}
@@ -66,6 +69,7 @@ export default function GeneralInfo({data, updateField}) {
                         <input 
                             type="text"
                             name="city"
+                            id='city'
                             value={data.city}
                             placeholder='Atlanta'
                             onChange={handleChange}
@@ -80,6 +84,7 @@ export default function GeneralInfo({data, updateField}) {
                         <input 
                             type="text" 
                             name='state'
+                            id='state'
                             value={data.state}
                             placeholder='GA'
                             minLength={2}
@@ -91,11 +96,12 @@ export default function GeneralInfo({data, updateField}) {
                 </div>
                 <div className="form-group">
                     <label htmlFor="linkedin">
-                        Linkedin
+                        Linkedin (Optional)
                         <br/>
                         <input 
                             type="url"
                             name='linkedin'
+                            id='linkedin'
                             value={data.linkedin}
                             placeholder='www.linkedin.com/john-doe/'
                             onChange={handleChange}
