@@ -34,9 +34,11 @@ export default function Main() {
         <main>
             <h2>Enter Your Info</h2>
             <div className="cv-container">
-                <GeneralInfo />
-                <Education />
-                <Experience />
+                <div className="top-cv">
+                <GeneralInfo data={cvData.generalInfo}/>
+                <Education data={cvData.education}/>
+                </div>
+                <Experience data={cvData.experience}/>
             </div>
         </main>
     )
