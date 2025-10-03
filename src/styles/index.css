@@ -1,6 +1,7 @@
 :root {
     --heading-color: #2b2b2c;
     --accent-color: #618a7b;
+    --main-color: #f2f3f4e8;
 }
 
 html, body {
@@ -38,6 +39,21 @@ header > h1 {
     float: right;
     display: flex;
     align-items: center;
+}
+
+main {
+    padding: 20px 10px;
+}
+
+h2 {
+    color: var(--heading-color);
+}
+
+.cv-container {
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 
 @media screen and (max-width: 500px) {
