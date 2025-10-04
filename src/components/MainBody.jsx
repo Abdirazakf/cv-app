@@ -51,6 +51,16 @@ export default function Main() {
         }))
     }
 
+    const updateExperience = (name, value) => {
+        setData(prevData => ({
+            ...prevData,
+            experience: [{
+                ...prevData.experience[0],
+                [name]: value
+            }]
+        }))
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('CV data submitted: ', cvData)
@@ -65,10 +75,7 @@ export default function Main() {
                         <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
                         <Education data={cvData.education[0]} updateField={updateEducation}/>
                     </div>
-                    <Experience data={cvData.experience}/>
-                    <div className="submit-container">
-                        <SubmitButton text='Submit' section='page-form'/>
-                    </div>
+                    <Experience data={cvData.experience} updateField={updateExperience}/>
                 </div>
 
                 <div className="preview-column">

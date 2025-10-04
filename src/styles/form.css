@@ -1,6 +1,6 @@
 .cv-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
@@ -14,6 +14,7 @@
 }
 
 .preview-column {
+    grid-row: 1 / -1;
     position: sticky;
     top: 20px;
     height: fit-content;
@@ -88,13 +89,15 @@
     box-shadow: 0 0 0 3px rgba(97, 138, 123, 0.1);
 }
 
-.form-group.date-range {
-    display: flex;
-    gap: 1rem;
+.form-group textarea {
+    resize: vertical;
+    font-family: inherit;
 }
 
-.form-group.date-range input {
-    flex: 1;
+.form-group.date-range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .submit-container {
@@ -103,16 +106,14 @@
     margin-top: 1rem;
 }
 
-.experience-section {
-    grid-column: 1 / -1;
-}
-
+/* Tablet and below - stack everything */
 @media screen and (max-width: 1024px) {
     .cv-container {
         grid-template-columns: 1fr;
     }
     
     .preview-column {
+        grid-row: auto;
         position: static;
     }
     
@@ -121,17 +122,27 @@
     }
 }
 
+/* Mobile - smaller spacing */
 @media screen and (max-width: 768px) {
-    .top-cv {
-        grid-template-columns: 1fr;
-    }
-    
     .cv-container {
         padding: 10px;
         gap: 20px;
     }
+
+    .form-column {
+        gap: 20px;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-group.date-range {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Wide screens - increase spacing and sizing */
 @media screen and (min-width: 1400px) {
     main {
         padding: 40px;
@@ -144,8 +155,7 @@
     }
 
     .cv-container {
-        max-width: 1400px;
-        margin: 0 auto;
+        max-width: 1600px;
         padding: 30px;
         gap: 40px;
     }
