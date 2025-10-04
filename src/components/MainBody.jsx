@@ -114,7 +114,7 @@ export default function Main() {
     return (
         <main>
             <h2 id='main-header'>Enter Your Info</h2>
-            <form onSubmit={handleSubmit} id="cv-form">
+            <div id="cv-form">
                 <div className="cv-container">
                     <div className="form-column">
                         <div className="top-cv">
@@ -131,7 +131,7 @@ export default function Main() {
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </main>
     )
 }
