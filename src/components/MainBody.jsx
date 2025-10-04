@@ -3,7 +3,6 @@ import GeneralInfo from './forms/GeneralInfo'
 import Education from './forms/Education'
 import Experience from './forms/Experience'
 import CVPreview from "./CVPreview"
-import { preview } from 'vite'
 
 export default function Main() {
     const [cvData, setData] = useState({
