@@ -6,6 +6,10 @@ export default function Experience({data, updateField, addExperience, removeExpe
         updateField(id, name, value)
     }
 
+    if (!data || !data.experience) {
+        return null
+    }
+
     return(
         <section className="form-section experience-section">
             <div className="section-header">
@@ -44,6 +48,8 @@ export default function Experience({data, updateField, addExperience, removeExpe
                                 placeholder="Google"
                                 onChange={(e) => handleChange(exp.id, e)}
                                 required
+                                minLength={2}
+                                title="Please enter company name (minimum 2 characters)"
                             />
                         </label>
                     </div>
@@ -60,6 +66,8 @@ export default function Experience({data, updateField, addExperience, removeExpe
                                 placeholder="Software Engineer"
                                 onChange={(e) => handleChange(exp.id, e)}
                                 required
+                                minLength={2}
+                                title="Please enter position title (minimum 2 characters)"
                             />
                         </label>
                     </div>
@@ -76,6 +84,8 @@ export default function Experience({data, updateField, addExperience, removeExpe
                                 onChange={(e) => handleChange(exp.id, e)}
                                 rows="4"
                                 required
+                                minLength={10}
+                                title="Please describe your responsibilities (minimum 10 characters)"
                             />
                         </label>
                     </div>
@@ -90,7 +100,10 @@ export default function Experience({data, updateField, addExperience, removeExpe
                                 id={`startDate-${exp.id}`} 
                                 value={exp.startDate} 
                                 onChange={(e) => handleChange(exp.id, e)} 
-                                required 
+                                required
+                                min="1950-01-01"
+                                max="2050-12-31"
+                                title="Please select a start date between 1950 and 2050"
                             />
                         </label>
                         <label htmlFor={`endDate-${exp.id}`}>
@@ -102,7 +115,10 @@ export default function Experience({data, updateField, addExperience, removeExpe
                                 id={`endDate-${exp.id}`} 
                                 value={exp.endDate} 
                                 onChange={(e) => handleChange(exp.id, e)} 
-                                required 
+                                required
+                                min="1950-01-01"
+                                max="2050-12-31"
+                                title="Please select an end date between 1950 and 2050"
                             />
                         </label>
                     </div>

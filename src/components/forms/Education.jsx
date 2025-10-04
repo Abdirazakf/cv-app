@@ -6,6 +6,10 @@ export default function Education({data, updateField, addEducation, removeEducat
         updateField(id, name, value)
     }
 
+    if (!data || !data.education) {
+        return null
+    }
+
     return(
         <section className="form-section education-section">
             <div className="section-header">
@@ -44,6 +48,8 @@ export default function Education({data, updateField, addEducation, removeEducat
                                 placeholder="Georgia Tech"
                                 onChange={(e) => handleChange(edu.id, e)}
                                 required
+                                minLength={2}
+                                title="Please enter your school name (minimum 2 characters)"
                             />
                         </label>
                     </div>
@@ -57,9 +63,11 @@ export default function Education({data, updateField, addEducation, removeEducat
                                 name="field"
                                 id={`field-${edu.id}`}
                                 value={edu.field}
-                                placeholder="Bachelors of Science"
+                                placeholder="Bachelor of Science"
                                 onChange={(e) => handleChange(edu.id, e)}
                                 required
+                                minLength={2}
+                                title="Please enter your field of study (minimum 2 characters)"
                             />
                         </label>
                     </div>
@@ -76,6 +84,8 @@ export default function Education({data, updateField, addEducation, removeEducat
                                 placeholder="Computer Science"
                                 onChange={(e) => handleChange(edu.id, e)}
                                 required
+                                minLength={2}
+                                title="Please enter your degree/major (minimum 2 characters)"
                             />
                         </label>
                     </div>
@@ -91,6 +101,9 @@ export default function Education({data, updateField, addEducation, removeEducat
                                 value={edu.gradDate}
                                 onChange={(e) => handleChange(edu.id, e)}
                                 required
+                                min="1950-01-01"
+                                max="2050-12-31"
+                                title="Please select a graduation date between 1950 and 2050"
                             />
                         </label>
                     </div>
