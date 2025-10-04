@@ -3,6 +3,7 @@ import GeneralInfo from './forms/GeneralInfo'
 import Education from './forms/Education'
 import Experience from './forms/Experience'
 import CVPreview from "./CVPreview"
+import { preview } from 'vite'
 
 export default function Main() {
     const [cvData, setData] = useState({
@@ -51,6 +52,29 @@ export default function Main() {
         }))
     }
 
+    const addEducation = () => {
+        const newId = Math.max(...cvData.education.map(entry => entry.id)) + 1
+        setData(prevData => ({
+            ...prevData,
+            education: [...prevData.education, {
+                id: newId,
+                school: '',
+                field: '',
+                degree: '',
+                gradDate: ''
+            }]
+        }))
+    }
+
+    const removeEducation = (id) => {
+        if (cvData.education.length > 1) {
+            setData(prevData => ({
+                ...prevData,
+                education: prevData.education.filter(edu => edu.id !== id)
+            }))
+        }
+    }
+
     const updateExperience = (name, value) => {
         setData(prevData => ({
             ...prevData,
@@ -59,6 +83,30 @@ export default function Main() {
                 [name]: value
             }]
         }))
+    } 
+
+    const addExperience = () => {
+        const newId = Math.max(...cvData.education.map(entry => entry.id)) + 1
+        setData(prevData => ({
+            ...prevData,
+            experience: [...prevData.experience, {
+                id: newId,
+                company: '',
+                position: '',
+                responsibilities: '',
+                startDate: '',
+                endDate: ''
+            }]
+        }))
+    }
+
+    const removeExperience = (id) => {
+        if (cvData.experience.length > 1) {
+            setData(prevData => ({
+                ...prevData,
+                experience: prevData.experience.filter(exp => exp.id !== id)
+            }))
+        }
     }
 
     const handleSubmit = (event) => {

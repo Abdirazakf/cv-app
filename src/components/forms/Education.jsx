@@ -1,3 +1,5 @@
+import Button from '../Button'
+
 export default function Education({data, updateField}) {
     const handleChange = (event) => {
         const {name,value} = event.target
