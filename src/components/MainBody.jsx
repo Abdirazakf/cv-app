@@ -71,17 +71,19 @@ export default function Main() {
             <h2>Enter Your Info</h2>
             <form onSubmit={handleSubmit} id="cv-form">
                 <div className="cv-container">
-                    <div className="top-cv">
-                        <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
-                        <Education data={cvData.education[0]} updateField={updateEducation}/>
+                    <div className="form-column">
+                        <div className="top-cv">
+                            <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
+                            <Education data={cvData.education[0]} updateField={updateEducation}/>
+                        </div>
+                        <Experience data={cvData.experience[0]} updateField={updateExperience}/>
                     </div>
-                    <Experience data={cvData.experience[0]} updateField={updateExperience}/>
-                </div>
 
-                <div className="preview-column">
-                    <div className="cv-preview">
-                        <h3>CV Preview</h3>
-                        <CVPreview data={cvData} />
+                    <div className="preview-column">
+                        <div className="cv-preview">
+                            <h3>CV Preview</h3>
+                            <CVPreview data={cvData} />
+                        </div>
                     </div>
                 </div>
             </form>
