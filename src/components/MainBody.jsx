@@ -25,7 +25,7 @@ export default function Main() {
             id: 1,
             company: '',
             position: '',
-            responsibilities: [],
+            responsibilities: '',
             startDate: '',
             endDate: ''
         }]
@@ -69,13 +69,13 @@ export default function Main() {
     return (
         <main>
             <h2>Enter Your Info</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="cv-form">
                 <div className="cv-container">
                     <div className="top-cv">
                         <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
                         <Education data={cvData.education[0]} updateField={updateEducation}/>
                     </div>
-                    <Experience data={cvData.experience} updateField={updateExperience}/>
+                    <Experience data={cvData.experience[0]} updateField={updateExperience}/>
                 </div>
 
                 <div className="preview-column">

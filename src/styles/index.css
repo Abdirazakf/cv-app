@@ -50,9 +50,10 @@ main {
 
 h2 {
     color: var(--heading-color);
+    margin: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     header {
         display: flex;
         flex-direction: column;
