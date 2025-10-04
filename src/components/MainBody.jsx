@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SubmitButton from './SubmitButton'
 import GeneralInfo from './forms/GeneralInfo'
 import Education from './forms/Education'
 import Experience from './forms/Experience'

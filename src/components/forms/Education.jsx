@@ -1,3 +1,5 @@
+import SubmitButton from "../SubmitButton"
+
 export default function Education({data, updateField, addEntry, removeEntry}) {
     const handleChange = (event) => {
         const {name,value} = event.target
@@ -72,6 +74,8 @@ export default function Education({data, updateField, addEntry, removeEntry}) {
                         />
                     </label>
                 </div>
+
+                <SubmitButton text='Submit' section='education' />
             </form>
         </section>
     )
