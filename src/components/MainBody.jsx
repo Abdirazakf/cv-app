@@ -41,18 +41,17 @@ export default function Main() {
         }))
     }
 
-    const updateEducation = (name, value) => {
+    const updateEducation = (id, name, value) => {
         setData(prevData => ({
             ...prevData,
-            education: [{
-                ...prevData.education[0],
-                [name]: value
-            }]
+            education: prevData.education.map(edu =>
+                edu.id === id ? { ...edu, [name]: value } : edu
+            )
         }))
     }
 
     const addEducation = () => {
-        const newId = Math.max(...cvData.education.map(entry => entry.id)) + 1
+        const newId = Math.max(...cvData.education.map(e => e.id)) + 1
         setData(prevData => ({
             ...prevData,
             education: [...prevData.education, {
@@ -74,18 +73,17 @@ export default function Main() {
         }
     }
 
-    const updateExperience = (name, value) => {
+    const updateExperience = (id, name, value) => {
         setData(prevData => ({
             ...prevData,
-            experience: [{
-                ...prevData.experience[0],
-                [name]: value
-            }]
+            experience: prevData.experience.map(exp =>
+                exp.id === id ? { ...exp, [name]: value } : exp
+            )
         }))
-    } 
+    }
 
     const addExperience = () => {
-        const newId = Math.max(...cvData.education.map(entry => entry.id)) + 1
+        const newId = Math.max(...cvData.experience.map(e => e.id)) + 1
         setData(prevData => ({
             ...prevData,
             experience: [...prevData.experience, {
@@ -121,9 +119,9 @@ export default function Main() {
                     <div className="form-column">
                         <div className="top-cv">
                             <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
-                            <Education data={cvData.education[0]} updateField={updateEducation}/>
+                            <Education data={cvData} updateField={updateEducation} addEducation={addEducation} removeEducation={removeEducation}/>
                         </div>
-                        <Experience data={cvData.experience[0]} updateField={updateExperience}/>
+                        <Experience data={cvData} updateField={updateExperience} addExperience={addExperience} removeExperience={removeExperience}/>
                     </div>
 
                     <div className="preview-column">
