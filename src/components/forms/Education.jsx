@@ -1,4 +1,4 @@
-export default function Education({data, updateField}) {
+export default function Education({data, updateField, addEntry, removeEntry}) {
     const handleChange = (event) => {
         const {name,value} = event.target
         updateField(name,value)

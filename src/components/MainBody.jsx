@@ -30,13 +30,33 @@ export default function Main() {
         }]
     })
 
+    const updateGeneralInfo = (name, value) => {
+        setData(prevData => ({
+            ...prevData,
+            generalInfo: {
+                ...prevData.generalInfo,
+                [name]: value
+            }
+        }))
+    }
+
+    const updateEducation = (name, value) => {
+        setData(prevData => ({
+            ...prevData,
+            education: [{
+                ...prevData.education[0],
+                [name]: value
+            }]
+        }))
+    }
+
     return (
         <main>
             <h2>Enter Your Info</h2>
             <div className="cv-container">
                 <div className="top-cv">
-                <GeneralInfo data={cvData.generalInfo}/>
-                <Education data={cvData.education}/>
+                <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
+                <Education data={cvData.education[0]} updateField={updateEducation}/>
                 </div>
                 <Experience data={cvData.experience}/>
             </div>
