@@ -53,6 +53,16 @@ h2 {
     margin: 0;
 }
 
+.cv-preview {
+    padding: 40px;
+    min-height: 800px;
+}
+
+.cv-preview h3 {
+    font-size: 1.75rem;
+}
+
+
 @media screen and (max-width: 700px) {
     header {
         display: flex;

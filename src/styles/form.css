@@ -192,16 +192,7 @@
         padding: 0.875rem;
         font-size: 1.05rem;
     }
-
-    .cv-preview {
-        padding: 40px;
-        min-height: 800px;
-    }
-
-    .cv-preview h3 {
-        font-size: 1.75rem;
-    }
-
+    
     .submit-container {
         margin-top: 2rem;
     }
