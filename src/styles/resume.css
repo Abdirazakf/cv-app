@@ -2,18 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
 
 .resume-preview {
-    font-family: Tinos, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-family: Tinos, serif;
     font-size: 14px;
     font-weight: 400;
     background: white;
     padding: 0.5in;
-    max-width: 8.5in;
-    min-height: 11in;
-    margin: 0 auto;
+    color: #000;
+    line-height: 1.4;
 }
 
 .resume-preview .spacer {
-    margin: 0px auto;
+    flex: 1;
 }
 
 .resume-preview .vertical-spacer {
@@ -22,38 +21,55 @@
 
 /* Heading styles */
 .resume-preview h1 {
-    color: black;
+    color: #000 !important;
     text-transform: uppercase;
-    text-align: left;
-    font-size: 32px;
-    margin: 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
     padding: 0;
-    order: 0;
+    letter-spacing: 1px;
+    border: none !important;
 }
 
 .resume-preview h2 {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #000 !important;
     text-transform: uppercase;
-    font-size: 16px;
-    padding: 0;
-    margin: 10px 0px;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 0 2px 0 !important;
+    margin: 10px 0 6px 0 !important;
+    letter-spacing: 0.5px;
+    color: #000 !important;
 }
 
 .resume-preview h3 {
     display: flex;
-    font-size: 15px;
-    padding: 0;
-    margin: 6px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 !important;
+    margin: 4px 0 !important;
     justify-content: space-between;
+    align-items: baseline;
+    border: none !important;
+    color: #000 !important;
+}
+
+.resume-preview h3 strong {
+    font-weight: 700;
 }
 
 .resume-preview p {
     margin: 0;
-    margin-top: 2px;
-    margin-bottom: 2px;
     padding: 0;
-    display: flex;
-    color: black;
+    color: #000;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.resume-preview li {
+    margin-bottom: 2px;
+    color: #000;
 }
 
 .resume-preview li > p {
@@ -61,7 +77,7 @@
 }
 
 .resume-preview a {
-    color: black;
+    color: #000;
     text-decoration: none;
 }
 
@@ -70,48 +86,42 @@
 }
 
 .resume-preview ul {
-    margin: 4px 0;
-    padding-left: 24px;
-    padding-right: 24px;
+    margin: 4px 0 0 0;
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
-.resume-preview li {
-    color: black;
+.resume-preview strong {
+    font-weight: 700;
 }
 
-.resume-preview strong, 
-.resume-preview em, 
-.resume-preview a {
-    padding-left: 1px;
-    padding-right: 2px;
+.resume-preview em {
+    font-style: italic;
 }
 
 /* Header info styles */
-.resume-preview .headerInfo {
-    order: 1;
-}
-
 .resume-preview .headerInfo > ul {
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    margin: 6px auto 0px !important;
+    margin: 0 auto !important;
     padding: 0;
+    font-size: 12px;
+    gap: 0;
 }
 
 .resume-preview .headerInfo > ul > li {
-    display: inline;
-    white-space: pre;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
     list-style-type: none;
 }
 
-.resume-preview .headerInfo > ul > li:not(:last-child) {
-    margin-right: 8px;
-}
-
-.resume-preview .headerInfo > ul > li:not(:last-child):after {
+.resume-preview .headerInfo > ul > li:not(:last-child)::after {
     content: "•";
-    margin-left: 8px;
+    margin: 0 6px;
+    font-weight: 400;
 }
 
 /* Print styles */
@@ -119,5 +129,10 @@
     .resume-preview {
         padding: 0.5in;
         box-shadow: none;
+    }
+    
+    @page {
+        margin: 0.5in;
+        size: letter;
     }
 }

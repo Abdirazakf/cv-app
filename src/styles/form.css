@@ -1,10 +1,19 @@
-.cv-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
+.cv-preview {
+    background: white;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.cv-preview > h3 {
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .form-column {
@@ -40,6 +49,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+}
+
+.experience-section {
+    margin-top: 20px;
 }
 
 .form-section {
@@ -110,6 +123,7 @@
 @media screen and (max-width: 1024px) {
     .cv-container {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
     
     .preview-column {
@@ -126,7 +140,6 @@
 @media screen and (max-width: 768px) {
     .cv-container {
         padding: 10px;
-        gap: 20px;
     }
 
     .form-column {

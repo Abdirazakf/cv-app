@@ -1,4 +1,4 @@
-import '../styles/SubmitButton.css'
+import '../styles/Button.css'
 
 export default function SubmitButton({type, text, section, formId}) {
     return(

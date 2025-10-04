@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import SubmitButton from './SubmitButton'
 import GeneralInfo from './forms/GeneralInfo'
 import Education from './forms/Education'
 import Experience from './forms/Experience'
+import CVPreview from "./CVPreview"
 
 export default function Main() {
     const [cvData, setData] = useState({
@@ -81,7 +81,7 @@ export default function Main() {
                 <div className="preview-column">
                     <div className="cv-preview">
                         <h3>CV Preview</h3>
-                        <p>Your CV preview will appear here</p>
+                        <CVPreview data={cvData} />
                     </div>
                 </div>
             </form>
