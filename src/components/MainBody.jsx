@@ -51,16 +51,33 @@ export default function Main() {
         }))
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log('CV data submitted: ', cvData)
+    }
+
     return (
         <main>
             <h2>Enter Your Info</h2>
-            <div className="cv-container">
-                <div className="top-cv">
-                <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
-                <Education data={cvData.education[0]} updateField={updateEducation}/>
+            <form onSubmit={handleSubmit}>
+                <div className="cv-container">
+                    <div className="top-cv">
+                        <GeneralInfo data={cvData.generalInfo} updateField={updateGeneralInfo}/>
+                        <Education data={cvData.education[0]} updateField={updateEducation}/>
+                    </div>
+                    <Experience data={cvData.experience}/>
+                    <div className="submit-container">
+                        <SubmitButton text='Submit' section='page-form'/>
+                    </div>
                 </div>
-                <Experience data={cvData.experience}/>
-            </div>
+
+                <div className="preview-column">
+                    <div className="cv-preview">
+                        <h3>CV Preview</h3>
+                        <p>Your CV preview will appear here</p>
+                    </div>
+                </div>
+            </form>
         </main>
     )
 }
