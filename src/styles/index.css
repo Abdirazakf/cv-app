@@ -48,6 +48,10 @@ main {
     padding: 20px 10px;
 }
 
+#main-header {
+    margin: 0;
+}
+
 h2 {
     color: var(--heading-color);
     margin: 0;
@@ -88,6 +92,10 @@ h2 {
 
     #header {
         width: 100%;
+    }
+
+    #main-header {
+        text-align: center;
     }
 }
 
