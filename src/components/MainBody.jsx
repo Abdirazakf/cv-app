@@ -106,11 +106,6 @@ export default function Main() {
         }
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log('CV data submitted: ', cvData)
-    }
-
     return (
         <main>
             <h2 id='main-header'>Enter Your Info</h2>
